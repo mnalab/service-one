@@ -1,0 +1,22 @@
+version: "2.1"
+
+services:
+  service-one:
+    image: dearnomi/service-one:latest
+    container_name: service-one
+    ports:
+      - "9001:9001"
+    environment:
+      SERVICE_TWO_HOST: service-two
+      SERVICE_TWO_PORT: 9002
+
+
+  service-two:
+    image: dearnomi/service-two:latest
+    container_name: service-two
+    ports:
+      - "9002:9002"
+    environment:
+      SERVICE_ONE_HOST: service-one
+      SERVICE_ONE_PORT: 9001
+

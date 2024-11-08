@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-one-deployment
+  labels:
+    app: service-one
+    mode: basic
+    category: learning
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: service-one
+      mode: basic
+      category: learning
+  template:
+    metadata:
+      labels:
+        app: service-one
+        mode: basic
+        category: learning
+    spec:
+      containers:
+        - name: service-one
+          image: dearnomi/service-one:latest
+          ports:
+            - containerPort: 9001
+          env:
+            - name: SERVICE_TWO_HOST
+              value: "10.106.168.192"
+            - name: SERVICE_TWO_PORT
+              value: "9002"
+

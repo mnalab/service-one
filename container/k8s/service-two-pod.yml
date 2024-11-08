@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: service-two-pod
+  labels:
+    app: service-two
+    mode: basic
+    category: learning
+spec:
+  containers:
+    - name: service-two
+      image: dearnomi/service-two:latest
+      ports:
+        - containerPort: 9002
+      env:
+        - name: SERVICE_ONE_HOST
+          value:  "10.101.118.69"
+        - name: SERVICE_ONE_PORT
+          value:  "9001"
+
+
+
