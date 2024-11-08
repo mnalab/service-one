@@ -1,5 +1,8 @@
 # Service-one Demo Project
-This is one demo project to create Spring boot demo project and run on docker container
+This is one demo project to create Services and run on docker container, by creating image, then run Image on docker container.
+Also with Docker compose to run services.
+
+This demo also demonstrate service calling from Service 1 to Service 2 in one Micro Service Platform.
 
 Create K8s objects and deploy on Kubernetes
 
